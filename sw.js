@@ -1,4 +1,4 @@
-const CACHE_NAME = "stookmelding-v10";
+const CACHE_NAME = "stookmelding-1-16";
 const APP_ASSETS = ["./", "./index.html", "./styles.css", "./app.js", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png"];
 
 self.addEventListener("install", (event) => {

@@ -4,7 +4,7 @@ const NL_BOUNDS = {
   minLon: 3.1,
   maxLon: 7.3,
 };
-const APP_VERSION = "v10";
+const APP_VERSION = "1.16";
 
 const els = {
   statusCard: document.getElementById("statusCard"),
@@ -119,7 +119,9 @@ function pm25ToLki(pm25) {
 function setStatus(state, durationHours, untilLabel, nextGreenLabel) {
   els.statusCard.classList.remove("status-loading", "status-green", "status-red");
   els.statusCard.classList.add(state === "green" ? "status-green" : "status-red");
-  els.statusText.textContent = state === "green" ? "Groen: stoken toegestaan" : "Rood: liever niet stoken";
+  document.body.classList.remove("bg-green", "bg-red");
+  document.body.classList.add(state === "green" ? "bg-green" : "bg-red");
+  els.statusText.textContent = state === "green" ? "Stoken toegestaan" : "Liever niet stoken";
   els.durationText.textContent =
     state === "green"
       ? `Verwacht nog ${durationHours} uur gunstig (${untilLabel}).`
@@ -326,6 +328,8 @@ async function refresh() {
   } catch (err) {
     els.statusCard.classList.remove("status-green", "status-red");
     els.statusCard.classList.add("status-red");
+    document.body.classList.remove("bg-green");
+    document.body.classList.add("bg-red");
     els.statusText.textContent = "Kon geen advies maken";
     els.durationText.textContent = err.message || "Onbekende fout.";
     els.driverGrid.innerHTML = "";
