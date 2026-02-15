@@ -4,7 +4,7 @@ const NL_BOUNDS = {
   minLon: 3.1,
   maxLon: 7.3,
 };
-const APP_VERSION = "1.18";
+const APP_VERSION = "1.19";
 
 const els = {
   statusCard: document.getElementById("statusCard"),
@@ -383,7 +383,7 @@ function setupAutoRefresh() {
 
 function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js").then((registration) => {
+    navigator.serviceWorker.register(`./sw.js?v=${APP_VERSION}`).then((registration) => {
       registration.update();
 
       if (registration.waiting) {
