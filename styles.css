@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light dark;
   --bg: #f4f7f3;
   --panel: #ffffff;
   --text: #17211e;
@@ -7,6 +8,10 @@
   --red: #b42318;
   --loading: #6b7280;
   --border: #d8e0db;
+  --driver-bg: #f8faf9;
+  --btn-primary: #134e3a;
+  --btn-secondary: #36454f;
+  --hour-dot-border: rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -103,7 +108,7 @@ body.bg-red {
   border: 0;
   border-radius: 10px;
   padding: 10px 12px;
-  background: #134e3a;
+  background: var(--btn-primary);
   color: #fff;
   cursor: pointer;
   font-weight: 600;
@@ -115,7 +120,7 @@ body.bg-red {
 }
 
 .btn-secondary {
-  background: #36454f;
+  background: var(--btn-secondary);
 }
 
 .meta {
@@ -154,7 +159,7 @@ h2 {
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 6px;
-  background: #f8faf9;
+  background: var(--driver-bg);
 }
 
 .driver-title {
@@ -249,7 +254,7 @@ h2 {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--hour-dot-border);
 }
 
 .hour-green .hour-dot {
@@ -280,6 +285,33 @@ h2 {
 .hour-red .hour-state {
   background: #fde2e0;
   color: #b42318;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1714;
+    --panel: #18221e;
+    --text: #e6f0ea;
+    --muted: #a9beb4;
+    --loading: #8ea49a;
+    --border: #2b3a34;
+    --driver-bg: #1b2622;
+    --btn-primary: #1a7a52;
+    --btn-secondary: #455862;
+    --hour-dot-border: rgba(255, 255, 255, 0.2);
+  }
+
+  body {
+    background: radial-gradient(circle at top right, #1a2a24 0%, #0f1714 46%, #121c18 100%);
+  }
+
+  body.bg-green {
+    background: radial-gradient(circle at top right, #1a3428 0%, #0f1f18 48%, #11251c 100%);
+  }
+
+  body.bg-red {
+    background: radial-gradient(circle at top right, #3a2220 0%, #1e1312 48%, #251817 100%);
+  }
 }
 
 @media (max-width: 480px) {
