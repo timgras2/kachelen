@@ -1,5 +1,5 @@
-const CACHE_NAME = "stookmelding-1-21";
-const APP_ASSETS = ["./", "./index.html", "./styles.css", "./app.js", "./manifest.webmanifest", "./icons/icon-192-v2.png", "./icons/icon-512-v2.png"];
+const CACHE_NAME = "stookmelding-1-24";
+const APP_ASSETS = ["./", "./index.html", "./styles.css", "./app.js", "./manifest.webmanifest", "./icons/icon-192-v5.png", "./icons/icon-512-v5.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

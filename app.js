@@ -4,7 +4,7 @@ const NL_BOUNDS = {
   minLon: 3.1,
   maxLon: 7.3,
 };
-const APP_VERSION = "1.21";
+const APP_VERSION = "1.24";
 
 const els = {
   statusCard: document.getElementById("statusCard"),
@@ -201,8 +201,8 @@ function maybeNotifyTransition(state) {
     navigator.serviceWorker.ready.then((registration) => {
       registration.showNotification("Stookmelding", {
         body: "Het is nu gunstig om te stoken (groen).",
-        icon: "icons/icon-192-v2.png",
-        badge: "icons/icon-192-v2.png",
+        icon: "icons/icon-192-v5.png",
+        badge: "icons/icon-192-v5.png",
       });
     });
   }
@@ -367,8 +367,8 @@ async function toggleNotifications() {
       navigator.serviceWorker.ready.then((registration) => {
         registration.showNotification("Stookmelding", {
           body: "Meldingen zijn actief. Het is op dit moment groen.",
-          icon: "icons/icon-192-v2.png",
-          badge: "icons/icon-192-v2.png",
+          icon: "icons/icon-192-v5.png",
+          badge: "icons/icon-192-v5.png",
         });
       });
     }
