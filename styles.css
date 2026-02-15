@@ -1,0 +1,270 @@
+:root {
+  --bg: #f4f7f3;
+  --panel: #ffffff;
+  --text: #17211e;
+  --muted: #55645e;
+  --green: #0d7a3f;
+  --red: #b42318;
+  --loading: #6b7280;
+  --border: #d8e0db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: radial-gradient(circle at top right, #dcefe2 0%, var(--bg) 45%, #eef4ef 100%);
+  color: var(--text);
+}
+
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  margin: 6px 0 16px;
+  color: var(--muted);
+}
+
+.status {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
+
+.dot {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--loading);
+  flex: 0 0 auto;
+}
+
+.status.status-green .dot {
+  background: var(--green);
+}
+
+.status.status-red .dot {
+  background: var(--red);
+}
+
+.status-text {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.duration-text {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.settings {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 14px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #134e3a;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.btn-secondary {
+  background: #36454f;
+}
+
+.meta {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.timeline {
+  display: flex;
+  overflow-x: auto;
+  gap: 6px;
+  padding-bottom: 6px;
+}
+
+.drivers {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.driver-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.driver {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+  background: #f8faf9;
+}
+
+.driver-title {
+  margin: 0 0 4px;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.driver-pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 1px 7px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.driver-green .driver-pill {
+  background: #d9f7e5;
+  color: #0d7a3f;
+}
+
+.driver-orange .driver-pill {
+  background: #ffedd5;
+  color: #b45309;
+}
+
+.driver-red .driver-pill {
+  background: #fde2e0;
+  color: #b42318;
+}
+
+.driver-value {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.driver-note {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.changes {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.next-change {
+  margin: 6px 0 10px;
+  font-weight: 600;
+}
+
+.hours-details summary {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.hourly-list {
+  max-height: 260px;
+  overflow-y: auto;
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+
+.hour-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 8px;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+}
+
+.hour-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 76px;
+  font-weight: 600;
+}
+
+.hour-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.hour-green .hour-dot {
+  background: var(--green);
+}
+
+.hour-red .hour-dot {
+  background: var(--red);
+}
+
+.hour-metrics {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.hour-state {
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.hour-green .hour-state {
+  background: #d9f7e5;
+  color: #0d7a3f;
+}
+
+.hour-red .hour-state {
+  background: #fde2e0;
+  color: #b42318;
+}
+
+@media (max-width: 430px) {
+  .driver-grid {
+    grid-template-columns: 1fr;
+  }
+}

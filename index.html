@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b3d2e">
+  <title>Stookmelding</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Stookmelding</h1>
+      <p class="subtitle">Persoonlijk advies op uurbasis (Nederland)</p>
+    </header>
+
+    <section id="statusCard" class="status status-loading" aria-live="polite">
+      <div id="statusDot" class="dot"></div>
+      <div>
+        <p id="statusText" class="status-text">Laden...</p>
+        <p id="durationText" class="duration-text">Gegevens worden opgehaald.</p>
+      </div>
+    </section>
+
+    <section class="drivers" aria-label="Indicatoren die de kleur bepalen">
+      <div id="driverGrid" class="driver-grid"></div>
+    </section>
+
+    <section class="settings" aria-label="Instellingen">
+      <button id="refreshBtn" class="btn">Vernieuwen</button>
+      <button id="notifyBtn" class="btn btn-secondary">Melding aanzetten</button>
+      <p id="metaText" class="meta"></p>
+    </section>
+
+    <section class="changes" aria-label="Verloop per uur">
+      <h2>Verandering</h2>
+      <p id="nextChangeText" class="next-change">-</p>
+      <details class="hours-details">
+        <summary>Bekijk uurlijkse waarden</summary>
+        <div id="hourlyList" class="hourly-list"></div>
+      </details>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
