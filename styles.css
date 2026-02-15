@@ -315,42 +315,38 @@ h2 {
   }
 
   .driver-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
   }
 
-  .driver-grid .driver:last-child {
-    grid-column: 1 / -1;
-  }
-
   .driver {
-    padding: 8px 7px;
-    min-height: 110px;
+    padding: 7px 6px;
+    min-height: 96px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
   .driver-title {
-    font-size: 0.88rem;
-    margin-bottom: 4px;
+    font-size: 0.82rem;
+    margin-bottom: 3px;
   }
 
   .driver-pill {
-    font-size: 0.74rem;
+    font-size: 0.7rem;
     padding: 2px 8px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     align-self: flex-start;
   }
 
   .driver-value {
-    font-size: 1.12rem;
+    font-size: 1.02rem;
     line-height: 1.1;
   }
 
   .driver-note {
-    font-size: 0.78rem;
-    margin-top: 4px;
+    font-size: 0.72rem;
+    margin-top: 3px;
     line-height: 1.2;
   }
 

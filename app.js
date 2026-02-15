@@ -4,7 +4,7 @@ const NL_BOUNDS = {
   minLon: 3.1,
   maxLon: 7.3,
 };
-const APP_VERSION = "1.17";
+const APP_VERSION = "1.18";
 
 const els = {
   statusCard: document.getElementById("statusCard"),
