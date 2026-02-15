@@ -18,6 +18,15 @@ body {
   font-family: "Segoe UI", Tahoma, sans-serif;
   background: radial-gradient(circle at top right, #dcefe2 0%, var(--bg) 45%, #eef4ef 100%);
   color: var(--text);
+  transition: background 220ms ease;
+}
+
+body.bg-green {
+  background: radial-gradient(circle at top right, #d3efdf 0%, #edf6ef 48%, #e8f4ec 100%);
+}
+
+body.bg-red {
+  background: radial-gradient(circle at top right, #f4d8d4 0%, #f9efed 48%, #f6e8e6 100%);
 }
 
 .app {
@@ -47,25 +56,25 @@ body {
   margin-bottom: 12px;
 }
 
-.dot {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
+.status-mark {
+  width: 10px;
+  min-height: 78px;
+  border-radius: 999px;
   background: var(--loading);
   flex: 0 0 auto;
 }
 
-.status.status-green .dot {
+.status.status-green .status-mark {
   background: var(--green);
 }
 
-.status.status-red .dot {
+.status.status-red .status-mark {
   background: var(--red);
 }
 
 .status-text {
   margin: 0;
-  font-size: 1.45rem;
+  font-size: 1.18rem;
   font-weight: 700;
 }
 
@@ -83,6 +92,13 @@ body {
   margin-bottom: 14px;
 }
 
+.settings-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
 .btn {
   border: 0;
   border-radius: 10px;
@@ -91,8 +107,11 @@ body {
   color: #fff;
   cursor: pointer;
   font-weight: 600;
-  margin-right: 8px;
-  margin-bottom: 8px;
+  margin: 0;
+  width: 100%;
+  min-height: 42px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .btn-secondary {
@@ -263,8 +282,118 @@ h2 {
   color: #b42318;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 480px) {
+  .app {
+    padding: 14px;
+  }
+
+  .header h1 {
+    font-size: 2.1rem;
+  }
+
+  .subtitle {
+    font-size: 1.04rem;
+  }
+
+  .status {
+    padding: 16px;
+  }
+
+  .status-mark {
+    min-height: 74px;
+    width: 10px;
+  }
+
+  .status-text {
+    font-size: 1.22rem;
+    line-height: 1.1;
+  }
+
+  .duration-text {
+    font-size: 1.05rem;
+    line-height: 1.25;
+  }
+
   .driver-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .driver {
+    padding: 8px 7px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .driver-title {
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+  }
+
+  .driver-pill {
+    font-size: 0.74rem;
+    padding: 2px 8px;
+    margin-bottom: 5px;
+    align-self: flex-start;
+  }
+
+  .driver-value {
+    font-size: 1.12rem;
+    line-height: 1.1;
+  }
+
+  .driver-note {
+    font-size: 0.78rem;
+    margin-top: 4px;
+    line-height: 1.2;
+  }
+
+  .hour-row {
+    font-size: 1.03rem;
+    padding: 10px 12px;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+  }
+
+  .hour-left {
+    min-width: 88px;
+    gap: 10px;
+  }
+
+  .hour-metrics {
+    font-size: 0.94rem;
+    line-height: 1.25;
+  }
+
+  .hour-state {
+    font-size: 0.9rem;
+    padding: 4px 10px;
+  }
+
+  .hour-dot {
+    width: 18px;
+    height: 18px;
+  }
+
+  .next-change {
+    font-size: 1.08rem;
+  }
+
+  .meta {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 11px 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .driver-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

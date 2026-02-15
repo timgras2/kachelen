@@ -16,7 +16,7 @@
     </header>
 
     <section id="statusCard" class="status status-loading" aria-live="polite">
-      <div id="statusDot" class="dot"></div>
+      <div id="statusDot" class="status-mark" aria-hidden="true"></div>
       <div>
         <p id="statusText" class="status-text">Laden...</p>
         <p id="durationText" class="duration-text">Gegevens worden opgehaald.</p>
@@ -28,8 +28,10 @@
     </section>
 
     <section class="settings" aria-label="Instellingen">
-      <button id="refreshBtn" class="btn">Vernieuwen</button>
-      <button id="notifyBtn" class="btn btn-secondary">Melding aanzetten</button>
+      <div class="settings-actions">
+        <button id="refreshBtn" class="btn">Vernieuwen</button>
+        <button id="notifyBtn" class="btn btn-secondary">Melding aanzetten</button>
+      </div>
       <p id="metaText" class="meta"></p>
     </section>
 
