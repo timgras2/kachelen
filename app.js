@@ -4,7 +4,7 @@ const NL_BOUNDS = {
   minLon: 3.1,
   maxLon: 7.3,
 };
-const APP_VERSION = "1.16";
+const APP_VERSION = "1.17";
 
 const els = {
   statusCard: document.getElementById("statusCard"),
@@ -383,7 +383,29 @@ function setupAutoRefresh() {
 
 function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js");
+    navigator.serviceWorker.register("./sw.js").then((registration) => {
+      registration.update();
+
+      if (registration.waiting) {
+        registration.waiting.postMessage({ type: "SKIP_WAITING" });
+      }
+
+      registration.addEventListener("updatefound", () => {
+        const newWorker = registration.installing;
+        if (!newWorker) return;
+        newWorker.addEventListener("statechange", () => {
+          if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+            newWorker.postMessage({ type: "SKIP_WAITING" });
+          }
+        });
+      });
+    });
+
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (window.__swReloaded) return;
+      window.__swReloaded = true;
+      window.location.reload();
+    });
   }
 }
 

@@ -315,8 +315,12 @@ h2 {
   }
 
   .driver-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 6px;
+  }
+
+  .driver-grid .driver:last-child {
+    grid-column: 1 / -1;
   }
 
   .driver {
@@ -389,11 +393,5 @@ h2 {
   .btn {
     font-size: 1rem;
     padding: 11px 14px;
-  }
-}
-
-@media (max-width: 360px) {
-  .driver-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
